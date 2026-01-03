@@ -1,18 +1,135 @@
-# React + Vite
+# LearnLingo – Online Language Tutors
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**LearnLingo** is a web application for a company that offers online language lessons. The app allows users to find tutors based on different criteria, view their profiles, and add favorite tutors to a private “Favorites” page.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Main Pages
 
-## React Compiler
+1. **Home**
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+   - Displays the company's advantages.
+   - Contains a call-to-action button that redirects to the **Teachers** page.
 
-Note: This will impact Vite dev & build performances.
+2. **Teachers**
 
-## Expanding the ESLint configuration
+   - Shows a list of tutors.
+   - Users can filter by:
+     - Language
+     - Student level
+     - Price per hour
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+   Additional features:
+
+   - Tutors are loaded in batches of 4 with a **Load more** button to fetch more.
+   - Adding tutors to favorites using the heart icon.
+   - Viewing detailed tutor info with **Read more**.
+   - Booking a trial lesson via a modal form.
+
+3. **Favorites** _(private page)_
+   - Shows all tutors added by the user to favorites.
+   - Styled similar to the Teachers page.
+
+---
+
+## ⚙️ Technical Requirements
+
+- **User Authentication** using **Firebase** (register, login, logout, get current user data).
+- Forms built with **React Hook Form** & **Yup** for validation (all fields required). Modal forms can be closed by:
+  - Clicking the “✕” button
+  - Clicking on the backdrop
+  - Pressing the Esc key
+- **Firebase Realtime Database** collection for tutors with fields:
+  name, surname, languages, levels, rating, reviews, price_per_hour, lessons_done, avatar_url, lesson_info, conditions, experience
+- Tutor cards rendered 4 at a time; additional tutors loaded with **Load more**.
+- **Favorites** logic:
+- Non-authenticated users: notification about login requirement.
+- Authenticated users: save favorites using **localStorage** or Firebase.
+- Favorites persist on page reload.
+- Detailed tutor info via **Read more** button.
+- Trial lesson booking through a modal form with validation.
+- Private **Favorites** page accessible only to authenticated users.
+
+---
+
+## ✨ Extra Tasks (_Optional_)
+
+- Routing with **React Router**.
+- Filtering on Teachers page by:
+- Language
+- Student level
+- Price per hour
+
+---
+
+## 🛠️ Technologies Used
+
+- **React** (Vite)
+- **React Hook Form** & **Yup**
+- **Firebase** (Authentication, Realtime Database)
+- **CSS Modules**
+- **React Icons**
+- **React Router DOM**
+
+---
+
+## 📂 Project Structure
+
+/src
+/components
+ContactForm/
+TeacherCard/
+FilterDropdown/
+Filters/
+Footer/
+Header/
+Home/
+LoginForm/
+MobileMenu/
+Modal/
+RegistrationForm/
+ThemeSwitcher/
+/pages
+FavoritesPage/
+Teachers/
+/hooks
+useMeta.js
+useTheme.js
+/styles
+themes.css
+/firebase-api.js
+firebase.js
+index.css
+App.jsx
+main.jsx
+
+---
+
+## 🎨 Styling
+
+- Responsive design for **desktop and mobile**.
+- Design based on mockup, color variations applied.
+- Modals and interactive elements follow UX guidelines.
+
+---
+
+## 🚀 How to Run Locally
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/elena05-dev/LearnLingo.git
+   cd LearnLingo
+   ```
+   Install dependencies: npm install
+   Run the app locally: npm run dev
+   Open the URL provided by Vite (usually http://localhost:5173).
+   The project is deployed on GitHub Pages
+   Link: <insert URL here>
+
+✅ Completion Criteria
+Semantic and valid HTML/CSS.
+No console errors in the browser.
+Fully interactive according to requirements.
+Firebase authentication and database integration work correctly.
+Clean, formatted code without unnecessary comments.
+README provides a full project overview.
