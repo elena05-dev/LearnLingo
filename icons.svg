@@ -1,0 +1,30 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-Star-2" viewBox="0 0 34 32">
+<title>Star-2</title>
+<path fill="#ffc531" style="fill: var(--color1, #ffc531); stroke: var(--color1, #ffc531)" stroke="#ffc531" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.7429" d="M20.319 9.43c0.364 0.689 1.027 1.171 1.795 1.304l8.685 1.5-6.143 6.326c-0.543 0.559-0.796 1.338-0.685 2.109l1.254 8.725-7.911-3.888-0.268-0.114c-0.544-0.193-1.139-0.193-1.683 0l-0.268 0.114-7.913 3.888 1.257-8.725c0.111-0.771-0.142-1.55-0.685-2.109l-6.145-6.326 8.688-1.5c0.768-0.133 1.431-0.614 1.795-1.304l4.114-7.797 4.114 7.797z"></path>
+</symbol>
+<symbol id="icon-heart" viewBox="0 0 32 32">
+<title>heart</title>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4615" d="M27.787 6.147c-0.681-0.681-1.49-1.222-2.38-1.591s-1.844-0.559-2.807-0.559c-0.963 0-1.917 0.19-2.807 0.559s-1.698 0.909-2.38 1.591l-1.413 1.413-1.413-1.413c-1.376-1.376-3.241-2.148-5.187-2.148s-3.811 0.773-5.187 2.148c-1.376 1.376-2.148 3.241-2.148 5.187s0.773 3.811 2.148 5.187l11.787 11.787 11.787-11.787c0.681-0.681 1.222-1.49 1.591-2.379s0.559-1.844 0.559-2.807-0.19-1.917-0.559-2.807c-0.369-0.89-0.909-1.699-1.591-2.38z"></path>
+</symbol>
+<symbol id="icon-ukraine" viewBox="0 0 32 32">
+<title>ukraine</title>
+<path fill="#ffda44" style="fill: var(--color2, #ffda44)" d="M16 32c8.837 0 16-7.163 16-16s-7.163-16-16-16c-8.837 0-16 7.163-16 16s7.163 16 16 16z"></path>
+<path fill="#338af3" style="fill: var(--color3, #338af3)" d="M0 16c0-8.836 7.163-16 16-16s16 7.163 16 16z"></path>
+</symbol>
+<symbol id="icon-log-in-01" viewBox="0 0 32 32">
+<title>log-in-01</title>
+<path fill="none" stroke="#f4c550" style="stroke: var(--color4, #f4c550)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M20 4h1.6c2.24 0 3.36 0 4.216 0.436 0.753 0.383 1.364 0.995 1.748 1.748 0.436 0.856 0.436 1.976 0.436 4.216v11.2c0 2.24 0 3.36-0.436 4.216-0.384 0.753-0.995 1.364-1.748 1.748-0.856 0.436-1.976 0.436-4.216 0.436h-1.6"></path>
+<path fill="none" stroke="#f4c550" style="stroke: var(--color4, #f4c550)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M13.333 9.333l6.667 6.667M20 16l-6.667 6.667M20 16h-16"></path>
+</symbol>
+<symbol id="icon-close" viewBox="0 0 20 20">
+<title>close</title>
+<path d="M10 8.586l-7.071-7.071-1.414 1.414 7.071 7.071-7.071 7.071 1.414 1.414 7.071-7.071 7.071 7.071 1.414-1.414-7.071-7.071 7.071-7.071-1.414-1.414-7.071 7.071z"></path>
+</symbol>
+<symbol id="icon-menu" viewBox="0 0 20 20">
+<title>menu</title>
+<path d="M0 3h20v2h-20v-2zM0 9h20v2h-20v-2zM0 15h20v2h-20v-2z"></path>
+</symbol>
+</defs>
+</svg>
