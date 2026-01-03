@@ -1,0 +1,39 @@
+.switcher {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.paletteButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: var(--color-primary);
+}
+
+.colorOptions {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+}
+
+.colorButton {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.colorButton:hover {
+    transform: scale(1.2);
+}

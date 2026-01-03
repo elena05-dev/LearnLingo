@@ -1,0 +1,62 @@
+.filters {
+    display: flex;
+    gap: 20px;
+    padding-top: 10px;
+
+}
+
+.languages,
+.level,
+.price {
+    width: 220px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #8a8a89;
+}
+
+.filters {
+    display: flex;
+    gap: 20px;
+}
+
+.languagesBtn {
+    width: 220px;
+    padding: 16px 18px;
+    background: #e9f3ff;
+}
+
+.levelBtn {
+    width: 200px;
+    padding: 14px 18px;
+    background: #fff4e6;
+}
+
+.priceBtn {
+    width: 140px;
+    padding: 14px 18px;
+    background: #f4ffe6;
+}
+
+@media (max-width: 1199px) {
+    .filters {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .filters {
+        flex-wrap: wrap;
+    }
+
+    .languages,
+    .level {
+        flex: 1 1 calc(50% - 10px);
+
+    }
+
+    .price {
+        flex: 1 1 100%;
+
+    }
+}

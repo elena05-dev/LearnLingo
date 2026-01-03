@@ -1,0 +1,128 @@
+.card {
+    max-width: 1400px;
+    width: 100%;
+    padding: 24px 64px 32px 64px;
+    margin: 0 auto;
+}
+
+.stats {
+    width: 100%;
+    max-width: 1312px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px dashed var(--color-border);
+    border-radius: 30px;
+    padding: 24px;
+
+}
+
+.statsList {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.statItem {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 10px 0;
+}
+
+.value {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    color: #121417;
+
+}
+
+.text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+    color: rgba(18, 20, 23, 0.7);
+    display: block;
+    max-width: 92px;
+    white-space: normal;
+    line-height: 18px;
+
+}
+
+@media (max-width: 1199px) {
+    .card {
+        max-width: 1199px;
+        width: 100%;
+        padding: 24px 26px 32px 26px;
+    }
+
+    .stats {
+        height: 80px;
+        width: 100%;
+        max-width: 1199px;
+        padding: 16px;
+    }
+
+    .statsList {
+        gap: 30px;
+        padding: 0 10px;
+    }
+
+    .statItem {
+        gap: 8px
+    }
+
+    .value {
+        font-size: 20px;
+    }
+
+    .text {
+        font-size: 12px;
+        max-width: 78px;
+    }
+}
+
+@media (max-width: 767px) {
+    .card {
+        max-width: 730px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .stats {
+        width: 100%;
+        max-width: 730px;
+        height: auto;
+        padding: 10px;
+    }
+
+    .statsList {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px 16px;
+        justify-items: start;
+        max-width: 320px;
+    }
+
+    .statItem {
+        gap: 12px;
+    }
+
+    .value {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .text {
+        font-size: 12px;
+        max-width: none;
+    }
+}

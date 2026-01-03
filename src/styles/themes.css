@@ -1,0 +1,45 @@
+/* default (yellow) */
+.theme-yellow {
+    --color-primary: #F4C550;
+    --color-primary-soft: #FBE9BA;
+
+    --color-bg-main: #ffffff;
+    --color-bg-secondary: #fdf9ee;
+
+    --color-text-main: #121417;
+    --color-text-secondary: rgba(18, 20, 23, 0.7);
+
+    --color-border: #FBE9BA;
+}
+
+/* green */
+.theme-green {
+    --color-primary: #9FBAAE;
+    --color-primary-soft: #CBDED3;
+    --color-bg-secondary: #f4faf7;
+    --color-border: #9FBAAE;
+}
+
+/* blue */
+.theme-blue {
+    --color-primary: #9FB7CE;
+    --color-primary-soft: #BFD6EA;
+    --color-bg-secondary: #f3f7fb;
+    --color-border: #9FB7CE;
+}
+
+/* rose */
+.theme-rose {
+    --color-primary: #E0A39A;
+    --color-primary-soft: #F2C0BD;
+    --color-bg-secondary: #fdf4f3;
+    --color-border: #E0A39A;
+}
+
+/* peach */
+.theme-peach {
+    --color-primary: #F0AA8D;
+    --color-primary-soft: #F4C8BA;
+    --color-bg-secondary: #fff4ef;
+    --color-border: #F0AA8D;
+}

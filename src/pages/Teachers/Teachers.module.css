@@ -1,0 +1,168 @@
+.teachers {
+    background-color: #f8f8f8;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 8px 64px;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+    min-height: 100vh;
+}
+
+.filtersDesktop {
+    display: flex;
+}
+
+.filtersToggle {
+    display: none;
+}
+
+.filters {
+    width: 583px;
+    height: 74px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 20px;
+
+}
+
+.teachersList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding-bottom: 64px;
+    padding-top: 32px;
+}
+
+
+.avatar {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.btnLoadMore {
+    display: block;
+    border-radius: 12px;
+    padding: 16px 48px;
+    width: 183px;
+    height: 60px;
+    background: var(--color-primary);
+    margin: 0 auto;
+    gap: 0px;
+    color: black;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    color: #121417;
+
+}
+
+@media (max-width: 1199px) {
+    .container {
+        max-width: 768px;
+        padding: 14px 26px;
+    }
+
+    .teachersList {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 375px;
+        padding: 10px 24px;
+    }
+
+    .teachersList {
+        padding-bottom: 14px;
+        padding-top: 14px;
+    }
+
+    .filtersDesktop {
+        display: none;
+    }
+
+    .filtersToggle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        background: #fff;
+        border: 1px solid rgba(18, 20, 23, 0.1);
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+
+    }
+
+    .filterIcon {
+        fill: var(--color-primary);
+    }
+
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .noScroll {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .filtersDrawer {
+        position: relative;
+        background: #fff;
+        border-radius: 16px;
+        z-index: 101;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-height: 98vh;
+        max-width: 400px;
+        overflow-y: auto;
+    }
+
+    .drawerHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .drawerContent {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .applyBtn {
+        width: 100%;
+        height: 48px;
+        border-radius: 12px;
+        background: var(--color-primary);
+        font-weight: 600;
+    }
+}

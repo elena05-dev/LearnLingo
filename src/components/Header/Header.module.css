@@ -1,0 +1,146 @@
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerLogoWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    border: none;
+}
+
+.logoText {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    color: #121417;
+}
+
+.logoText:hover {
+    color: var(--color-primary);
+}
+
+.navList {
+    display: flex;
+    padding: 0 120px 0 280px;
+    width: auto;
+    list-style: none;
+    gap: 28px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #121417;
+}
+
+.navList a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #121417;
+}
+
+.navList a:hover {
+    color: var(--color-primary);
+
+}
+
+.auth {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 20px 0 20px;
+}
+
+.btnLogin {
+    display: flex;
+    align-items: center;
+    padding: 0 4px 0 2px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #121417;
+    background: none;
+}
+
+.btnLogin:hover {
+    color: var(--color-primary);
+}
+
+.btnRegister {
+    border-radius: 12px;
+    padding: 14px 39px;
+    width: 166px;
+    height: 48px;
+    background: #121417;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    line-height: 1.25;
+    color: #fff;
+}
+
+.userGreeting {
+    display: flex;
+    align-items: center;
+    padding: 0 4px 0 4px;
+    font-style: italic;
+}
+
+.burger {
+    display: none;
+}
+
+
+@media (max-width: 1199px) {
+    .container {
+        max-width: 768px;
+    }
+
+    .navList {
+        display: none;
+
+    }
+
+    .auth {
+        display: none;
+    }
+
+    .btnLogin,
+    .btnLogin:hover,
+    .btnRegister {
+        display: none;
+    }
+
+    .headerThemeSwitcher {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+        margin-left: auto;
+
+    }
+}
+
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 375px;
+    }
+}

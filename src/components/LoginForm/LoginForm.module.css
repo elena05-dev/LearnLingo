@@ -1,0 +1,104 @@
+.form {
+    border-radius: 30px;
+    width: 565px;
+    height: 505px;
+    background: #fff;
+    padding: 64px;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+    color: #121417;
+    padding-bottom: 20px;
+    text-align: start;
+    margin: 0;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(18, 20, 23, 0.8);
+    padding-bottom: 40px;
+}
+
+.inputWrapper {
+    position: relative;
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    border: 1px solid rgba(18, 20, 23, 0.1);
+    border-radius: 12px;
+    padding: 16px 3rem 16px 18px;
+    font-size: 1rem;
+    background: none;
+}
+
+.label {
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.2s all;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #121417;
+    padding-left: 8px;
+}
+
+.input:focus+.label,
+.input:not(:placeholder-shown)+.label {
+    top: -0.65rem;
+    left: 0.65rem;
+    font-size: 0.65rem;
+    color: #333;
+}
+
+.error {
+    color: red;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.btnLogin {
+    display: block;
+    border-radius: 12px;
+    padding: 16px;
+    width: 438px;
+    height: 60px;
+    background: var(--color-primary);
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    color: #121417;
+    margin-top: 22px;
+}
+
+.btnLogin:hover {
+    background: var(--color-primary-soft);
+}
+
+@media (max-width: 767px) {
+    .form {
+        width: 100%;
+        max-width: 375px;
+        padding: 24px;
+    }
+
+    .btnLogin {
+        width: 100%;
+        max-width: 247px;
+
+    }
+}

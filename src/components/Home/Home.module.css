@@ -1,0 +1,156 @@
+.section {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 64px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.declaration {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    max-width: 720px;
+    width: 100%;
+    height: 530px;
+    padding: 64px;
+    background: #f8f8f8;
+}
+
+.title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.02em;
+    color: #121417;
+    margin-bottom: 24px;
+}
+
+.title span {
+    font-style: italic;
+    font-weight: 400;
+    display: inline-block;
+    line-height: 1;
+    padding: 0 8px;
+    background-color: var(--color-primary-soft);
+    border-radius: 8px;
+    margin-left: 10px;
+}
+
+.text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.02em;
+    color: #121417;
+    margin-top: 32px;
+    margin-bottom: 64px;
+    width: 471px;
+}
+
+.button {
+    border-radius: 12px;
+    padding: 16px 88px;
+    width: 267px;
+    height: 60px;
+    background: var(--color-primary);
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    color: #121417;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--color-primary-soft);
+}
+
+.imageSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.heroImage {
+
+    display: block;
+    width: 568px;
+    height: 530px;
+    object-fit: contain;
+
+}
+
+@media (max-width: 1024px) {
+    .section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .declaration {
+        width: 480px;
+        padding: 40px;
+    }
+
+    .text {
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 24px;
+    }
+
+    .imageSection {
+        order: -1;
+    }
+
+    .heroImage {
+        width: 480px;
+        height: auto;
+    }
+
+    .button {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .section {
+        padding: 10px 24px;
+    }
+
+    .declaration {
+        padding: 20px;
+        width: 280px;
+        height: auto;
+    }
+
+    .heroImage {
+        width: 280px;
+        height: auto;
+    }
+
+    .title {
+        font-size: 30px;
+        line-height: 36px;
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+
+    .text {
+        font-size: 14px;
+        margin: 0;
+        padding-bottom: 10px;
+
+    }
+
+    .button {
+        width: 220px;
+        font-size: 14px;
+        padding: 14px 74px;
+    }
+}

@@ -1,0 +1,41 @@
+.page {
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+
+.teachersList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    padding-bottom: 64px;
+    padding-top: 32px;
+}
+
+.title {
+    padding-top: 10px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    color: #121417;
+}
+
+@media (max-width: 1199px) {
+    .container {
+        max-width: 768px;
+        padding: 20px 26;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding: 10px 24px;
+    }
+}
