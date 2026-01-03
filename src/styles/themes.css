@@ -1,4 +1,3 @@
-/* default (yellow) */
 .theme-yellow {
     --color-primary: #F4C550;
     --color-primary-soft: #FBE9BA;
@@ -20,7 +19,7 @@
     --color-border: #9FBAAE;
 }
 
-/* blue */
+
 .theme-blue {
     --color-primary: #9FB7CE;
     --color-primary-soft: #BFD6EA;
@@ -28,7 +27,7 @@
     --color-border: #9FB7CE;
 }
 
-/* rose */
+
 .theme-rose {
     --color-primary: #E0A39A;
     --color-primary-soft: #F2C0BD;
@@ -36,7 +35,7 @@
     --color-border: #E0A39A;
 }
 
-/* peach */
+
 .theme-peach {
     --color-primary: #F0AA8D;
     --color-primary-soft: #F4C8BA;

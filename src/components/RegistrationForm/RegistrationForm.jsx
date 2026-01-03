@@ -89,12 +89,11 @@ export default function RegistrationForm({ onClose }) {
             cursor: "pointer",
           }}
         >
-          {" "}
           {showPassword ? (
             <AiOutlineEye size={20} />
           ) : (
             <AiOutlineEyeInvisible size={20} />
-          )}{" "}
+          )}
         </button>
 
         {errors.password && (
