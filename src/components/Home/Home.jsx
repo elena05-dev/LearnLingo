@@ -13,11 +13,11 @@ export default function Home() {
   const { theme } = useTheme();
 
   const images = {
-    yellow: "/yellow_hero_desk_1x.jpg",
-    green: "/green_hero_desk_1x.jpg",
-    blue: "/blue_hero_desk_1x.jpg",
-    rose: "/rose_hero_desk_1x.jpg",
-    peach: "/peach_hero_desk_1x.jpg",
+    yellow: `${import.meta.env.BASE_URL}yellow_hero_desk_1x.jpg`,
+    green: `${import.meta.env.BASE_URL}green_hero_desk_1x.jpg`,
+    blue: `${import.meta.env.BASE_URL}blue_hero_desk_1x.jpg`,
+    rose: `${import.meta.env.BASE_URL}rose_hero_desk_1x.jpg`,
+    peach: `${import.meta.env.BASE_URL}peach_hero_desk_1x.jpg`,
   };
 
   return (
