@@ -107,7 +107,7 @@ main.jsx
 
 ## 🎨 Styling
 
-- Responsive design for **desktop and mobile**.
+- Responsive design for **desktop, tablet and mobile**.
 - Design based on mockup, color variations applied.
 - Modals and interactive elements follow UX guidelines.
 
