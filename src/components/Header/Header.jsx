@@ -28,12 +28,13 @@ export default function Header() {
       <div className={css.container}>
         <Link to="/" className={css.headerLogoWrapper}>
           <svg
+            src="./icons.svg#icon-ukraine"
             className={css.headerLogo}
             width="32"
             height="32"
             aria-label="Logo"
           >
-            <use href={`${import.meta.env.BASE_URL}icons.svg#icon-ukraine`} />
+            <use href="./icons.svg#icon-ukraine"></use>
           </svg>
           <span className={css.logoText}>LearnLingo</span>
         </Link>
@@ -43,8 +44,8 @@ export default function Header() {
           onClick={() => setIsMenuOpen((prev) => !prev)}
           aria-label="Toggle menu"
         >
-          <svg className={isMenuOpen ? css.open : ""} width="24" height="24">
-            <use href={`${import.meta.env.BASE_URL}icons.svg#icon-menu`} />
+          <svg className={css.open} width="24" height="24">
+            <use href="./icons.svg#icon-menu" />
           </svg>
         </button>
 
