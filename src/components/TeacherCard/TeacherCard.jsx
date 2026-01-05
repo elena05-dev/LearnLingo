@@ -10,7 +10,10 @@ export default function TeacherCard({ teacher }) {
   const { user } = useAuth();
 
   const [isFavorite, setIsFavorite] = useState(() => {
-    const favs = JSON.parse(localStorage.getItem("favorites")) || [];
+    if (!user) return false;
+
+    const key = `favorites_${user.uid}`;
+    const favs = JSON.parse(localStorage.getItem(key)) || [];
     return favs.includes(teacher.id);
   });
 
@@ -23,17 +26,20 @@ export default function TeacherCard({ teacher }) {
       return;
     }
 
-    const favs = JSON.parse(localStorage.getItem("favorites")) || [];
+    const key = `favorites_${user.uid}`;
+    const favs = JSON.parse(localStorage.getItem(key)) || [];
+
+    let updated;
 
     if (favs.includes(teacher.id)) {
-      const updated = favs.filter((id) => id !== teacher.id);
-      localStorage.setItem("favorites", JSON.stringify(updated));
+      updated = favs.filter((id) => id !== teacher.id);
       setIsFavorite(false);
     } else {
-      const updated = [...favs, teacher.id];
-      localStorage.setItem("favorites", JSON.stringify(updated));
+      updated = [...favs, teacher.id];
       setIsFavorite(true);
     }
+
+    localStorage.setItem(key, JSON.stringify(updated));
   };
 
   const toggleDetails = () => setShowDetails((s) => !s);
@@ -97,15 +103,20 @@ export default function TeacherCard({ teacher }) {
                 </li>
               </ul>
 
-              <button className={css.heartBtn} onClick={toggleFavorite}>
-                {isFavorite ? (
-                  <FaHeart className={`${css.heartIcon} ${css.heartActive}`} />
-                ) : (
-                  <FiHeart className={css.heartIcon} />
-                )}
-              </button>
+              {user && (
+                <button className={css.heartBtn} onClick={toggleFavorite}>
+                  {isFavorite ? (
+                    <FaHeart
+                      className={`${css.heartIcon} ${css.heartActive}`}
+                    />
+                  ) : (
+                    <FiHeart className={css.heartIcon} />
+                  )}
+                </button>
+              )}
             </nav>
           </div>
+
           <p className={css.text}>
             <span className={css.label}>Speaks:</span>{" "}
             {teacher.languages.join(", ")}

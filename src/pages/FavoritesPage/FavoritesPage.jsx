@@ -3,6 +3,7 @@ import css from "./FavoritesPage.module.css";
 import TeacherCard from "../../components/TeacherCard/TeacherCard";
 import { fetchTeachers } from "../../firebase-api";
 import useMeta from "../../hooks/useMeta";
+import { useAuth } from "../../context/useAuth";
 
 export default function FavoritesPage() {
   useMeta({
@@ -11,8 +12,11 @@ export default function FavoritesPage() {
       "View your favorite language tutors on Learnlingo. Quickly access tutors you have added to your favorites.",
   });
 
+  const { user } = useAuth();
+
   const [favoriteIds, setFavoriteIds] = useState(() => {
-    return JSON.parse(localStorage.getItem("favorites")) || [];
+    if (!user) return [];
+    return JSON.parse(localStorage.getItem(`favorites_${user.uid}`)) || [];
   });
 
   const [favoriteTeachers, setFavoriteTeachers] = useState([]);
@@ -20,8 +24,13 @@ export default function FavoritesPage() {
 
   useEffect(() => {
     async function loadFavorites() {
-      setLoading(true);
+      if (!user) {
+        setFavoriteTeachers([]);
+        setLoading(false);
+        return;
+      }
 
+      setLoading(true);
       try {
         const allTeachers = await fetchTeachers();
 
@@ -33,22 +42,21 @@ export default function FavoritesPage() {
       } catch (error) {
         console.error("Failed to load teachers:", error);
       }
-
       setLoading(false);
     }
 
     loadFavorites();
-  }, [favoriteIds]);
+  }, [user, favoriteIds]);
 
   function handleRemove(id) {
+    if (!user) return;
+
     const updated = favoriteIds.filter((favId) => favId !== id);
     setFavoriteIds(updated);
-    localStorage.setItem("favorites", JSON.stringify(updated));
+    localStorage.setItem(`favorites_${user.uid}`, JSON.stringify(updated));
   }
 
-  if (loading) {
-    return <p className={css.loading}>Loading...</p>;
-  }
+  if (loading) return <p className={css.loading}>Loading...</p>;
 
   return (
     <section className={css.page}>

@@ -124,7 +124,7 @@ main.jsx
    Run the app locally: npm run dev
    Open the URL provided by Vite (usually http://localhost:5173).
    The project is deployed on GitHub Pages
-   Link: <insert URL here>
+   Link: (https://learn-lingo-wvz2.vercel.app/)
 
 ✅ Completion Criteria
 Semantic and valid HTML/CSS.

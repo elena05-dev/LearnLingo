@@ -1,33 +1,38 @@
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
 import css from "./ContactForm.module.css";
 
-export default function ContactForm({ teacher, onClose }) {
+export default function ContactForm({ teacher }) {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm({
-    defaultValues: {
-      reason: "Work",
-    },
+    defaultValues: { reason: "Work" },
   });
 
-  const onSubmit = (data) => {
+  const sendFormData = async () => {
+    return new Promise((resolve) => setTimeout(resolve, 1000));
+  };
+
+  const handleFormSubmit = async (data) => {
     console.log("Form data:", data);
-    alert("Thank you! Your request has been sent.");
-    reset();
-    onClose();
+    try {
+      await sendFormData(data);
+      toast.success("Form submitted successfully!");
+    } catch {
+      toast.error("Something went wrong!");
+    }
   };
 
   return (
     <div className={css.containerContactForm}>
+      <Toaster />
       <h1 className={css.title}>Book trial lesson</h1>
       <p className={css.text}>
         Our experienced tutor will assess your current language level, discuss
         your learning goals, and tailor the lesson to your specific needs.
       </p>
-
       <div className={css.imgAvatar}>
         <img
           src={teacher.avatar_url}
@@ -41,12 +46,10 @@ export default function ContactForm({ teacher, onClose }) {
           </li>
         </ul>
       </div>
-
       <h2 className={css.item}>
         What is your main reason for learning English?
       </h2>
-
-      <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
+      <form onSubmit={handleSubmit(handleFormSubmit)} className={css.form}>
         <div className={css.radioGroup}>
           <label>
             <input

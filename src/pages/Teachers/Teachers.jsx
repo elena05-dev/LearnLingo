@@ -23,10 +23,6 @@ export default function TeachersPage() {
   const [levels, setLevels] = useState("");
   const [price_per_hour, setPrice_per_hour] = useState("");
 
-  const [favorites, setFavorites] = useState(() => {
-    return JSON.parse(localStorage.getItem("favorites")) || [];
-  });
-
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 
   useEffect(() => {
@@ -69,18 +65,6 @@ export default function TeachersPage() {
     }
     getTeachers();
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  }, [favorites]);
-
-  const toggleFavorite = (teacherId) => {
-    setFavorites((prev) =>
-      prev.includes(teacherId)
-        ? prev.filter((id) => id !== teacherId)
-        : [...prev, teacherId]
-    );
-  };
 
   if (loading) return <p>Loading...</p>;
   if (teachers.length === 0) return <p>No teachers found.</p>;
@@ -145,12 +129,7 @@ export default function TeachersPage() {
             filteredTeachers
               .slice(0, visibleCount)
               .map((teacher) => (
-                <TeacherCard
-                  key={teacher.id}
-                  teacher={teacher}
-                  isFavorite={favorites.includes(teacher.id)}
-                  toggleFavorite={() => toggleFavorite(teacher.id)}
-                />
+                <TeacherCard key={teacher.id} teacher={teacher} />
               ))
           ) : (
             <p>No teachers found for the selected filters</p>

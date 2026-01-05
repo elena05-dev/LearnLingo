@@ -6,7 +6,6 @@ import Modal from "./components/Modal/Modal";
 import { useState, useEffect } from "react";
 import { useAuth } from "./context/useAuth";
 import Home from "./components/Home/Home";
-import Footer from "./components/Footer/Footer";
 
 function PrivateRoute({ children }) {
   const { user } = useAuth();
@@ -53,7 +52,6 @@ function App() {
           }
         />
       </Routes>
-      <Footer />
     </>
   );
 }

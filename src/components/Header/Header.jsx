@@ -97,8 +97,11 @@ export default function Header() {
               </button>
 
               <div className={css.userGreeting}>
-                <AiOutlineUser size={20} style={{ marginRight: "0.3rem" }} />
-                Hi, {user.name || user.email}
+                <AiOutlineUser
+                  color="var(--color-primary)"
+                  size={20}
+                  style={{ marginRight: "0.3rem" }}
+                />
               </div>
             </>
           )}
