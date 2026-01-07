@@ -6,7 +6,7 @@ import { FaHeart } from "react-icons/fa";
 import Modal from "../Modal/Modal";
 import ContactForm from "../ContactForm/ContactForm";
 
-export default function TeacherCard({ teacher }) {
+export default function TeacherCard({ teacher, onRequireLogin }) {
   const { user } = useAuth();
 
   const [isFavorite, setIsFavorite] = useState(() => {
@@ -20,9 +20,9 @@ export default function TeacherCard({ teacher }) {
   const [showDetails, setShowDetails] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
 
-  const toggleFavorite = () => {
+  const handleFavoriteClick = () => {
     if (!user) {
-      alert("Please log in to add favorites");
+      onRequireLogin();
       return;
     }
 
@@ -30,28 +30,25 @@ export default function TeacherCard({ teacher }) {
     const favs = JSON.parse(localStorage.getItem(key)) || [];
 
     let updated;
-
-    if (favs.includes(teacher.id)) {
+    if (isFavorite) {
       updated = favs.filter((id) => id !== teacher.id);
-      setIsFavorite(false);
     } else {
       updated = [...favs, teacher.id];
-      setIsFavorite(true);
     }
 
     localStorage.setItem(key, JSON.stringify(updated));
+    setIsFavorite(!isFavorite);
   };
-
   const toggleDetails = () => setShowDetails((s) => !s);
-  const openContactForm = () => setShowContactForm(true);
   const closeContactForm = () => setShowContactForm(false);
 
   const handleBookTrial = () => {
     if (!user) {
-      alert("Please log in to book a trial lesson");
+      onRequireLogin();
       return;
     }
-    openContactForm();
+
+    setShowContactForm(true);
   };
 
   return (
@@ -103,17 +100,13 @@ export default function TeacherCard({ teacher }) {
                 </li>
               </ul>
 
-              {user && (
-                <button className={css.heartBtn} onClick={toggleFavorite}>
-                  {isFavorite ? (
-                    <FaHeart
-                      className={`${css.heartIcon} ${css.heartActive}`}
-                    />
-                  ) : (
-                    <FiHeart className={css.heartIcon} />
-                  )}
-                </button>
-              )}
+              <button className={css.heartBtn} onClick={handleFavoriteClick}>
+                {isFavorite ? (
+                  <FaHeart className={`${css.heartIcon} ${css.heartActive}`} />
+                ) : (
+                  <FiHeart className={css.heartIcon} />
+                )}
+              </button>
             </nav>
           </div>
 

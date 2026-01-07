@@ -5,6 +5,7 @@ import Filters from "../../components/Filters/Filters";
 import TeacherCard from "../../components/TeacherCard/TeacherCard";
 import useMeta from "../../hooks/useMeta";
 import { FiFilter } from "react-icons/fi";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function TeachersPage() {
   useMeta({
@@ -82,6 +83,7 @@ export default function TeachersPage() {
 
   return (
     <section className={css.teachers}>
+      <Toaster position="top-right" />
       <div className={css.container}>
         <button className={css.filtersToggle} onClick={openFilters}>
           <FiFilter className={css.filterIcon} />
@@ -129,7 +131,13 @@ export default function TeachersPage() {
             filteredTeachers
               .slice(0, visibleCount)
               .map((teacher) => (
-                <TeacherCard key={teacher.id} teacher={teacher} />
+                <TeacherCard
+                  key={teacher.id}
+                  teacher={teacher}
+                  onRequireLogin={() =>
+                    toast.error("Please log in to use this feature")
+                  }
+                />
               ))
           ) : (
             <p>No teachers found for the selected filters</p>
